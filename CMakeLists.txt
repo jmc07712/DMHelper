@@ -56,7 +56,12 @@ IF (APPLE)
         message(SEND_ERROR "libsqlite3.a does not exist, please generate it and then reload.")
     ENDIF()
 
+    IF (NOT EXISTS "${PROJECT_SOURCE_DIR}/Vendor/spdlog/lib/macOS/libspdlog.a")
+        message(SEND_ERROR "libspdlog.a does not exist, please generate it and then reload.")
+    ENDIF()
+
     target_link_libraries(DMHelper ${PROJECT_SOURCE_DIR}/Vendor/sqlite3/lib/macOS/libsqlite3.a)
+    target_link_libraries(DMHelper ${PROJECT_SOURCE_DIR}/Vendor/spdlog/lib/macOS/libspdlog.a)
 ELSEIF(WIN32)
     message("Windows Detected: Linking with sqlite3")
 
