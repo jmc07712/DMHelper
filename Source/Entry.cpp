@@ -2,6 +2,8 @@
 #include <Source/GUI/MainWindow.h>
 #include <QOpenGLWidget>
 
+#include <sqlite3.h>
+
 class GLWidget : public QOpenGLWidget {
 public:
     GLWidget() {}

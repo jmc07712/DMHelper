@@ -9,7 +9,7 @@ Application::Application(int argc, char **argv): QApplication(argc, argv) {
     this->Initialize();
 }
 
-Application::~Application() noexcept {
+Application::~Application() {
     if (this->m_isInitialized)
         this->Shutdown();
 }
