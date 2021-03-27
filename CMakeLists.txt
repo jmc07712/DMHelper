@@ -36,7 +36,7 @@ add_executable(DMHelper Source/Entry.cpp Source/Core/Application.cpp Source/Core
 include_directories(${OPENGL_INCLUDE_DIR})
 include_directories(${QT_QTOPENGL_INCLUDE_DIR})
 
-message("Adding sqlite3 include directories.")
+message(STATUS "Adding sqlite3 include directories.")
 include_directories(${PROJECT_SOURCE_DIR}/Vendor/sqlite3/include)
 
 target_link_libraries(DMHelper Qt6::Core)
@@ -47,11 +47,11 @@ target_link_libraries(DMHelper Qt6::OpenGLWidgets)
 target_link_libraries(DMHelper ${OPENGL_LIBRARIES})
 
 IF (APPLE)
-    message("Apple Detected: Linking with GLUT")
+    message(STATUS "Apple Detected: Linking with GLUT")
     target_link_libraries(DMHelper ${GLUT_LIBRARY})
-    message("Apple Detected: Linking with sqlite3")
+    message(STATUS "Apple Detected: Linking with sqlite3")
     IF (NOT EXISTS "${PROJECT_SOURCE_DIR}/Vendor/sqlite3/lib/macOS/libsqlite3.a")
-        message(SEND_ERROR "sqlite3 library does not exist, please run the build script for it located in ${PROJECT_SOURCE_DIR}/Vendor/sqlite3.")
+        message(SEND_ERROR "libsqlite3.a does not exist, please generate it and then reload.")
     ENDIF()
     target_link_libraries(DMHelper ${PROJECT_SOURCE_DIR}/Vendor/sqlite3/lib/macOS/libsqlite3.a)
 ELSEIF(WIN32)
