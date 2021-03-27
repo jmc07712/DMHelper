@@ -1,6 +1,6 @@
-#include <QtOpenGLWidgets/QOpenGLWidget>
 #include <Source/Application.h>
 #include <Source/MainWindow.h>
+#include <QOpenGLWidget>
 
 class GLWidget : public QOpenGLWidget {
 public:
@@ -28,8 +28,10 @@ public:
 int main(int argc, char **argv) {
     auto app = Application(argc, argv);
     auto window = MainWindow(1280, 720, "DM Helper");
+
     window.setCentralWidget(new GLWidget());
+
     window.show();
 
-    return app.Run();
+    return app.exec();
 }
