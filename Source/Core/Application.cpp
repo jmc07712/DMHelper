@@ -2,7 +2,7 @@
 // Created by Jared Chester on 3/27/21.
 //
 
-#include <iostream>
+#include <spdlog/spdlog.h>
 #include "Application.h"
 
 Application::Application(int argc, char **argv): QApplication(argc, argv) {
@@ -15,12 +15,12 @@ Application::~Application() {
 }
 
 void Application::Initialize() {
-    std::cout << "Initializing application." << std::endl;
+    spdlog::info("Initializing application.");
     this->m_isInitialized = true;
 }
 
 void Application::Shutdown() {
-    std::cout << "Shutting down application." << std::endl;
+    spdlog::info("Shutting down application.");
 }
 
 int Application::Run() {
