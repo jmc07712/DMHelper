@@ -11,7 +11,7 @@
 class Application: public QApplication {
 public:
     Application(int argc, char **argv);
-    ~Application();
+    ~Application() override;
 
     int Run();
 

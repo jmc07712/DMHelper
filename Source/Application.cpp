@@ -2,6 +2,7 @@
 // Created by Jared Chester on 3/27/21.
 //
 
+#include <iostream>
 #include "Application.h"
 
 Application::Application(int argc, char **argv): QApplication(argc, argv) {
@@ -14,10 +15,13 @@ Application::~Application() noexcept {
 }
 
 void Application::Initialize() {
+    std::cout << "Initializing application." << std::endl;
     this->m_isInitialized = true;
 }
 
-void Application::Shutdown() {}
+void Application::Shutdown() {
+    std::cout << "Shutting down application." << std::endl;
+}
 
 int Application::Run() {
     if (!this->m_isInitialized) {
