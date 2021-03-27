@@ -35,6 +35,7 @@ add_executable(DMHelper Source/Entry.cpp Source/Core/Application.cpp Source/Core
 
 include_directories(${OPENGL_INCLUDE_DIR})
 include_directories(${QT_QTOPENGL_INCLUDE_DIR})
+include_directories(${PROJECT_SOURCE_DIR}/Vendor/json/include)
 
 message(STATUS "Adding sqlite3 include directories.")
 include_directories(${PROJECT_SOURCE_DIR}/Vendor/sqlite3/include)
