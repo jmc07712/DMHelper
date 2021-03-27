@@ -64,10 +64,10 @@ ELSEIF(WIN32)
         message(SEND_ERROR "sqlite3 library does not exist, please run the build script for it located in ${PROJECT_SOURCE_DIR}/Vendor/sqlite3.")
     ENDIF()
 
-    IF (NOT EXISTS "${PROJECT_SOURCE_DIR}/Vendor/spdlog/lib/spdlogd.lib")
+    IF (NOT EXISTS "${PROJECT_SOURCE_DIR}/Vendor/spdlog/lib/win_x64/spdlogd.lib")
         message(SEND_ERROR "spdlogd library does not exist.")
     ENDIF()
 
     target_link_libraries(DMHelper ${PROJECT_SOURCE_DIR}/Vendor/sqlite3/lib/win_x64/sqlite3.lib)
-    target_link_libraries(DMHelper ${PROJECT_SOURCE_DIR}/Vendor/spdlog/lib/spdlogd.lib)
+    target_link_libraries(DMHelper ${PROJECT_SOURCE_DIR}/Vendor/spdlog/lib/win_x64/spdlogd.lib)
 ENDIF()
